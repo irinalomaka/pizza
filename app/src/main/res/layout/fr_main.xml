@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.nennos.pizza.ui.viewmodels.MainFragmentViewModel" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:pizzaList="@{viewModel.pizzaItemList}" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/fabBtn"
+            android:layout_width="@dimen/height_img_pizza"
+            android:layout_height="@dimen/height_img_pizza"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/margin_padding_16"
+            app:srcCompat="@mipmap/floating" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addedToCartView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_add_card"
+            android:layout_gravity="bottom"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="@string/added_to_card"
+            android:textColor="@color/primary_text_color"
+            android:textSize="@dimen/main_text_size"
+            android:visibility="@{viewModel.addToCartView ? View.VISIBLE : View.GONE}" />
+
+    </FrameLayout>
+</layout>

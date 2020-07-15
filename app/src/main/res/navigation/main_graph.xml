@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.nennos.pizza.ui.fragment.MainFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fr_main" />
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.nennos.pizza.ui.fragment.CartFragment"
+        android:label="@string/title_cart"
+        tools:layout="@layout/fr_cart" />
+
+    <fragment
+        android:id="@+id/pizzaFragment"
+        android:name="com.nennos.pizza.ui.fragment.PizzaFragment"
+        android:label="@string/title_pizza"
+        tools:layout="@layout/fr_pizza">
+
+        <argument
+            android:name="basePrice"
+            android:defaultValue="0.0"
+            app:argType="float" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/drinkFragment"
+        android:name="com.nennos.pizza.ui.fragment.DrinkFragment"
+        android:label="@string/title_drink"
+        tools:layout="@layout/fr_drink" />
+
+    <fragment
+        android:id="@+id/thanksFragment"
+        android:name="com.nennos.pizza.ui.fragment.ThanksFragment"
+        tools:layout="@layout/ac_thanks" />
+</navigation>

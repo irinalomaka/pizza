@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pizzaItemHolder"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_bg_img"
+    android:background="@mipmap/bg_wood_opt">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/pizzaImageViewHolder"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_bg_img"
+        android:layout_gravity="top"
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/bg_wood_opt" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/pizzaImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/height_img_pizza"
+        android:adjustViewBounds="true" />
+
+    <LinearLayout
+        android:id="@+id/descriptionBackView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/bg_transparent"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_padding_16">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pizzaNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/large_text_size"
+            android:textStyle="bold"
+            tools:text="Ricci" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pizzaIngredientsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_padding_16"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/main_text_size"
+            tools:text="Mozzarella, Tomato Sauce" />
+
+        <include layout="@layout/btn_pizza_price" />
+    </LinearLayout>
+
+</FrameLayout>

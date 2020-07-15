@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pizzaPriceBtn"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/height_price_btn"
+    android:background="@drawable/pizza_price_button_back"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/height_price_btn"
+        android:layout_height="@dimen/height_price_btn"
+        android:padding="@dimen/margin_padding_8"
+        android:src="@drawable/ic_cart_white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/pizzaPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_price_btn"
+        android:gravity="center_vertical"
+        android:minWidth="@dimen/height_price_btn"
+        android:paddingEnd="@dimen/margin_padding_8"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/medium_text_size"
+        tools:text="$10" />
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.nennos.pizza.ui.viewmodels.PizzaFragmentViewModel" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_bg_img"
+                    android:background="@mipmap/bg_wood_opt">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/pizzaImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/height_img_pizza"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@mipmap/custom" />
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_padding_16"
+                    android:text="@string/ingredients"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/main_text_size" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:ingredientList="@{viewModel.ingredientList}" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <FrameLayout
+            android:id="@+id/addCustomPizzaToCart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_add_card"
+            android:layout_gravity="bottom"
+            android:background="@color/colorYellow"
+            android:enabled="@{viewModel.addedCustomPizzaToCartView ? false : true}">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/ic_cart_white"
+                android:drawablePadding="@dimen/margin_padding_8"
+                android:text="@string/add_to_card"
+                android:textColor="@color/primary_text_color"
+                android:textSize="@dimen/main_text_size"
+                app:totalPizzaPrice="@{viewModel.totalPrice}" />
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/addedCustomPizzaToCart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_add_card"
+            android:layout_gravity="bottom"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="@string/add_to_card"
+            android:textColor="@color/primary_text_color"
+            android:textSize="@dimen/main_text_size"
+            android:visibility="@{viewModel.addedCustomPizzaToCartView ? View.VISIBLE : View.GONE}" />
+
+    </FrameLayout>
+</layout>

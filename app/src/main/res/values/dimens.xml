@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //margin, padding
+    <dimen name="margin_padding_16">16dp</dimen>
+    <dimen name="margin_padding_8">8dp</dimen>
+
+
+    //text
+    <dimen name="main_text_size">16sp</dimen>
+    <dimen name="small_text_size">12sp</dimen>
+    <dimen name="medium_text_size">14sp</dimen>
+    <dimen name="large_text_size">20sp</dimen>
+    <dimen name="extra_large_text_size">24sp</dimen>
+
+    <dimen name="height_add_card">52dp</dimen>
+    <dimen name="height_img_pizza">60dp</dimen>
+    <dimen name="height_price_btn">36dp</dimen>
+    <dimen name="height_bg_img">300dp</dimen>
+    <dimen name="height_img_small">24dp</dimen>
+
+</resources>
